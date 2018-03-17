@@ -40,42 +40,42 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li {{(Request::is('admin/user') ? 'class=active' : '')}}>
-                    <a href="/admin/user">
-                        <i class="material-icons">person</i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
                 <li {{(Request::is('admin/posts') ? 'class=active' : '')}}>
                     <a href="/admin/posts">
                         <i class="material-icons">content_paste</i>
                         <p>Posts</p>
                     </a>
                 </li>
+                <li {{(Request::is('admin/user') ? 'class=active' : '')}}>
+                    <a href="/admin/user">
+                        <i class="material-icons">person</i>
+                        <p>Users</p>
+                    </a>
+                </li>
                 <li>
                     <a href="/typography">
-                        <i class="material-icons">library_books</i>
-                        <p>Typography</p>
+                        <i class="material-icons">settings</i>
+                        <p>Site Settings</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/icons">
-                        <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/maps">
-                        <i class="material-icons">location_on</i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/notifications">
-                        <i class="material-icons text-gray">notifications</i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
+                {{--<li>--}}
+                    {{--<a href="/icons">--}}
+                        {{--<i class="material-icons">bubble_chart</i>--}}
+                        {{--<p>Icons</p>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="/maps">--}}
+                        {{--<i class="material-icons">location_on</i>--}}
+                        {{--<p>Maps</p>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="/notifications">--}}
+                        {{--<i class="material-icons text-gray">notifications</i>--}}
+                        {{--<p>Notifications</p>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
             </ul>
         </div>
     </div>

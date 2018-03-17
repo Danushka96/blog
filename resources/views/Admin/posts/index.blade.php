@@ -4,18 +4,22 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
+                            <button type="button" class="btn btn-primary" style="background-color: blue" >
+                                NEW
+                            </button>
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
                                     <h4 class="title">Post List</h4>
+
                                     <p class="category">Manage Your Posts From Here</p>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table">
                                         <thead class="text-primary">
-                                            <th>Name</th>
-                                            <th>Country</th>
-                                            <th>City</th>
-                                            <th>Salary</th>
+                                            <th>Title</th>
+                                            <th>Author</th>
+                                            <th>Views</th>
+                                            <th>Action</th>
                                         </thead>
                                         <tbody>
                                             <tr>

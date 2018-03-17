@@ -24,5 +24,6 @@ Route::get('/blog', 'PostsController@index');
 Route::group(['middleware' => ['auth'], 'as' => 'admin.'], function(){
     Route::get('/admin','Admin\DashboardController@index');
     Route::get('/admin/user','Admin\UserController@index');
+    Route::get('/admin/user/new','Admin\UserController@new');
     Route::get('/admin/posts','Admin\PostController@index');
 });

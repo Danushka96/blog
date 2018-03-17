@@ -4,8 +4,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary" style="background-color: blue" >
-                        Invite User
+                    <button type="button" class="btn btn-primary" style="background-color: blue"  >
+                        <a href="{{url('/admin/user/new')}}" style="color: white">Invite User</a>
                     </button>
                     <div class="card">
                         <div class="card-header" data-background-color="purple">

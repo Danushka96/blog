@@ -46,7 +46,7 @@
                         <p>Posts</p>
                     </a>
                 </li>
-                <li {{(Request::is('admin/user') ? 'class=active' : '')}}>
+                <li {{(Request::is('admin/user')||Request::is('admin/user/new') ? 'class=active' : '')}}>
                     <a href="/admin/user">
                         <i class="material-icons">person</i>
                         <p>Users</p>

@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}" />
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Material Dashboard by Creative Tim</title>
+    <title>Spartan Bloggin Control Panel</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -29,7 +29,7 @@
 -->
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text">
-                Creative Tim
+                Spartan Blogging
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -41,45 +41,39 @@
                     </a>
                 </li>
                 <li {{(Request::is('admin/user') ? 'class=active' : '')}}>
-                    <a href="admin/user">
+                    <a href="/admin/user">
                         <i class="material-icons">person</i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li {{(Request::is('admin/posts') ? 'class=active' : '')}}>
-                    <a href="admin/posts">
+                    <a href="/admin/posts">
                         <i class="material-icons">content_paste</i>
                         <p>Posts</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography">
+                    <a href="/typography">
                         <i class="material-icons">library_books</i>
                         <p>Typography</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons">
+                    <a href="/icons">
                         <i class="material-icons">bubble_chart</i>
                         <p>Icons</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps">
+                    <a href="/maps">
                         <i class="material-icons">location_on</i>
                         <p>Maps</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications">
+                    <a href="/notifications">
                         <i class="material-icons text-gray">notifications</i>
                         <p>Notifications</p>
-                    </a>
-                </li>
-                <li class="active-pro">
-                    <a href="upgrade">
-                        <i class="material-icons">unarchive</i>
-                        <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>
@@ -151,6 +145,20 @@
         </nav>
 @yield('content')
 
+        <footer class="footer">
+            <div class="container-fluid">
+
+                <p class="copyright pull-right">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="#">Project Name</a>, made with love for a better web
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
 
 <script src="{{asset('assets/js/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>

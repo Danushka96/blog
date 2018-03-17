@@ -6,7 +6,7 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="card">
                                 <div class="card-header text-center" data-background-color="purple">
-                                    <h4 class="title">Material Dashboard PRO</h3>
+                                    <h4 class="title">Material Dashboard PRO</h4>
                                         <p class="category">Are you looking for more components? Please check our Premium Version of Material Dashboard.</p>
                                 </div>
                                 <div class="card-content">
@@ -76,41 +76,4 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                    </p>
-                </div>
-            </footer>
-        </div>
-    </div>
 @endsection

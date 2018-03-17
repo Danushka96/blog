@@ -19,6 +19,8 @@ class UserController extends Controller
     }
     public function store(Request $request){
         $user=User::create($request->all());
-        return redirect()->route('admin');
+        $user=User::all();
+        $role=role::all();
+        return view('Admin/users/index',compact('user','role'));
     }
 }

@@ -10,12 +10,13 @@
                             <p class="category">Account Details</p>
                         </div>
                         <div class="card-content">
-                            <form method="post" action="#">
+                            <form method="post" action="/admin/user/add">
                                 <div class="row">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-3">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Username</label>
-                                            <input type="text" class="form-control" name="username">
+                                            <input type="text" class="form-control" name="  name">
                                         </div>
                                     </div>
                                     <div class="col-md-4">

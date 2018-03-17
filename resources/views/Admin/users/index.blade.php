@@ -4,9 +4,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <a href="{{url('/admin/user/new')}}">
                     <button type="button" class="btn btn-primary" style="background-color: blue"  >
-                        <a href="{{url('/admin/user/new')}}" style="color: white">Invite User</a>
+                        Invite User
                     </button>
+                    </a>
                     <div class="card">
                         <div class="card-header" data-background-color="purple">
                             <h4 class="title">User List</h4>
@@ -17,15 +19,15 @@
                                 <thead class="text-primary">
                                 <th>Name</th>
                                 <th>Role</th>
-                                <th>Last Login</th>
+                                <th>Number of Posts</th>
                                 <th style="text-align: right"></th>
                                 </thead>
                                 <tbody>
                                 @foreach($user as $data)
                                     <tr>
                                         <td>{{$data['fname']}}</td>
-                                        <td>Author</td>
-                                        <td>{{today()}}</td>
+                                        <td>{{$role[$data['role']-1]['name']}}</td>
+                                        <td>5</td>
                                         <td align="right">
                                             <div>
                                                     <button class="btn btn-xs btn-primary">View</button>

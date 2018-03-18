@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth'], 'as' => 'admin.'], function(){
     Route::post('/admin/user/add','Admin\UserController@store');
     Route::get('/admin/user/view/{userid}','Admin\UserController@view');
     Route::post('/admin/user/update','Admin\UserController@update');
-
+    Route::get('/admin/user/drop/{id}','Admin\UserController@drop');
 
     //    Post Routes
     Route::get('/admin/posts','Admin\PostController@index');

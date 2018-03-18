@@ -52,4 +52,12 @@ class UserController extends Controller
 //        echo $request;
         return view('Admin/users/view',compact('current'));
     }
+
+    public function drop($id){
+        $current=User::findorFail($id);
+        $current->delete();
+        $user=User::all();
+        $role=role::all();
+        return view('Admin/users/index',compact('user','role'));
+    }
 }

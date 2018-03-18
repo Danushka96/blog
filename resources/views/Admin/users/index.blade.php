@@ -31,8 +31,14 @@
                                         <td align="right">
                                             <div>
                                                 <a href="/admin/user/view/{{$data['id']}}"><button class="btn btn-xs btn-primary">View</button></a>
-                                                    <button class="btn btn-xs btn-danger">Delete</button>
+                                                <a href="/admin/user/drop/{{$data['id']}}" onclick="return confirmdelete()"><button class="btn btn-xs btn-danger">Delete</button></a>
                                             </div>
+                                            <script>
+                                                function confirmdelete() {
+                                                    if(!confirm("Are You Sure to delete this"))
+                                                        event.preventDefault();
+                                                }
+                                            </script>
                                         </td>
                                     </tr>
                                 @endforeach

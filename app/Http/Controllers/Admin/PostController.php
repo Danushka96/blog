@@ -10,4 +10,8 @@ class PostController extends Controller
     public function index(){
         return view('Admin/posts/index');
     }
+
+    public function new(){
+        return view('Admin/posts/new');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\role;
@@ -38,6 +39,17 @@ class UserController extends Controller
     }
     public function view($userid){
         $current=User::findorFail($userid);
-        return view('Admin/users/view',compact($current));
+        return view('Admin/users/view',compact('current'));
+    }
+    public function update(Request $request){
+        $user=User::findorFail($request->id);
+//        $current=$user;
+        $user->update($request->all());
+        $current=User::findorFail($request->id);
+        $current->about=$request->about;
+        $current->save();
+//        DB::table('users')->update(['about'=>($request->about)])->where('id','1');
+//        echo $request;
+        return view('Admin/users/view',compact('current'));
     }
 }

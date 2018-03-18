@@ -18,7 +18,7 @@ class ModUsers2 extends Migration
             $table->String('pp')->default("default.jpg")->change();
             $table->String('fname')->default("FirstName")->change();
             $table->String('lname')->default("LastName")->change();
-            $table->integer('role')->default(2)->change();
+            $table->integer('role')->default('2')->change();
         });
     }
 

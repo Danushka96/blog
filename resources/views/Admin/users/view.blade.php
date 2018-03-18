@@ -10,24 +10,20 @@
                             <p class="category">Complete your profile</p>
                         </div>
                         <div class="card-content">
-                            <form>
+                            <form method="post" name="update" action="/admin/user/update">
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Company (disabled)</label>
-                                            <input type="text" class="form-control" disabled>
-                                        </div>
-                                    </div>
                                     <div class="col-md-3">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="id" value="{{$current['id']}}">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Username</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="name" value="{{$current['name']}}" disabled>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Email address</label>
-                                            <input type="email" class="form-control">
+                                            <input type="email" class="form-control" name="email" value="{{$current['email']}}" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -35,41 +31,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Fist Name</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="fname" value="{{$current['fname']}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group label-floating">
                                             <label class="control-label">Last Name</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Adress</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">City</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Country</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Postal Code</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="lname" value="{{$current['lname']}}">
                                         </div>
                                     </div>
                                 </div>
@@ -78,8 +46,7 @@
                                         <div class="form-group">
                                             <label>About Me</label>
                                             <div class="form-group label-floating">
-                                                <label class="control-label"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                                <textarea class="form-control" rows="5"></textarea>
+                                                <textarea class="form-control" name="about" rows="2">{{$current['about']}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +61,7 @@
                     <div class="card card-profile">
                         <div class="card-avatar">
                             <a href="#pablo">
-                                <img class="img" src="../assets/img/faces/marc.jpg" />
+                                <img class="img" src="{{asset('assets/img/faces/marc.jpg')}}" />
                             </a>
                         </div>
                         <div class="content">

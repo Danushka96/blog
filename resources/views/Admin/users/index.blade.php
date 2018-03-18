@@ -30,7 +30,7 @@
                                         <td>5</td>
                                         <td align="right">
                                             <div>
-                                                    <button class="btn btn-xs btn-primary">View</button>
+                                                    <a href="{{link('admin/users/view',$data['id'])}}"><button class="btn btn-xs btn-primary">View</button>
                                                     <button class="btn btn-xs btn-success">Edit</button>
                                                     <button class="btn btn-xs btn-danger">Delete</button>
                                             </div>

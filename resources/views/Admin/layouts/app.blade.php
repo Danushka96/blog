@@ -18,6 +18,7 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 <div class="wrapper">
@@ -40,7 +41,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li {{(Request::is('admin/posts') ? 'class=active' : '')}}>
+                <li {{(Request::is('admin/posts')||Request::is('admin/posts/new') ? 'class=active' : '')}}>
                     <a href="/admin/posts">
                         <i class="material-icons">content_paste</i>
                         <p>Posts</p>

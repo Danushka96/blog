@@ -41,7 +41,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li {{(Request::is('admin/posts') ? 'class=active' : '')}}>
+                <li {{(Request::is('admin/posts')||Request::is('admin/posts/new') ? 'class=active' : '')}}>
                     <a href="/admin/posts">
                         <i class="material-icons">content_paste</i>
                         <p>Posts</p>

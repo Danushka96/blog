@@ -51,13 +51,13 @@
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li {{(Request::is('admin') ? 'class=active' : '')}}>
+                <li>
                     <a href="/admin">
                         <i class="material-icons">dashboard</i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li {{(Request::is('admin/posts') ? 'class=active' : '')}}>
+                <li class="active">
                     <a href="/admin/posts">
                         <i class="material-icons">content_paste</i>
                         <p>Posts</p>
@@ -162,9 +162,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{--<div class="summernote">--}}
-                                    <textarea name="summernoteInput" class="summernote" id="summernote"></textarea>
-                                {{--</div>--}}
+                                <div class="col-md-12">
+                                    <label class="control-label">Write Your Post Here</label>
+                                    <textarea name="body" class="summernote" id="summernote" ></textarea>
+                                </div>
                                 <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
                                 <div class="clearfix"></div>
                             </form>

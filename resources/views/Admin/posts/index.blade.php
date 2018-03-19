@@ -21,45 +21,29 @@
                                             <th>Title</th>
                                             <th>Author</th>
                                             <th>Views</th>
-                                            <th>Action</th>
+                                            <th></th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Dakota Rice</td>
-                                                <td>Niger</td>
-                                                <td>Oud-Turnhout</td>
-                                                <td class="text-primary">$36,738</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Minerva Hooper</td>
-                                                <td>Curaçao</td>
-                                                <td>Sinaai-Waas</td>
-                                                <td class="text-primary">$23,789</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sage Rodriguez</td>
-                                                <td>Netherlands</td>
-                                                <td>Baileux</td>
-                                                <td class="text-primary">$56,142</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Philip Chaney</td>
-                                                <td>Korea, South</td>
-                                                <td>Overland Park</td>
-                                                <td class="text-primary">$38,735</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Doris Greene</td>
-                                                <td>Malawi</td>
-                                                <td>Feldkirchen in Kärnten</td>
-                                                <td class="text-primary">$63,542</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mason Porter</td>
-                                                <td>Chile</td>
-                                                <td>Gloucester</td>
-                                                <td class="text-primary">$78,615</td>
-                                            </tr>
+                                            @foreach($posts as $post)
+                                                <tr>
+                                                    <td>{{$post['title']}}</td>
+                                                    <td>{{$users[$post['userid']]}}</td>
+                                                    <td>20</td>
+                                                    <td align="right">
+                                                        <div>
+                                                            <a href="/admin/user/view/"><button class="btn btn-xs btn-primary">View</button></a>
+                                                            <a href="/admin/user/view/"><button class="btn btn-xs btn-success">Edit</button></a>
+                                                            <a href="/admin/user/drop/" onclick="return confirmdelete()"><button class="btn btn-xs btn-danger">Delete</button></a>
+                                                        </div>
+                                                        <script>
+                                                            function confirmdelete() {
+                                                                if(!confirm("Are You Sure to delete this"))
+                                                                    event.preventDefault();
+                                                            }
+                                                        </script>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

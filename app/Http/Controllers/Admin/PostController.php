@@ -68,6 +68,7 @@ class PostController extends Controller
 
     }
     public function update(Post $id){
+        
         return view('Admin.posts.new', [
             'post' => $id,
         ]);

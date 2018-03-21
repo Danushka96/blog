@@ -24,15 +24,15 @@
                         <div class="col-md-8">
                             <div class="form-group label-floating">
                                 <label class="control-label">Post Title</label>
-                                <input type="text" class="form-control" name="title">
+                                <input type="text" class="form-control" name="title" value="{{ !empty($post) ? $post->title : ''}}">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <label class="control-label">Write Your Post Here</label>
-                        <textarea name="body" class="summernote" id="summernote" ></textarea>
+                        <textarea name="body" class="summernote" id="summernote" >{!! !empty($post) ? $post->body : ''!!}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <button type="submit" class="btn btn-primary pull-right">Save</button>
                     <div class="clearfix"></div>
                 </form>
             </div>

@@ -67,10 +67,18 @@ class PostController extends Controller
     public function edit($id){
 
     }
-    public function update(Request $request){
-
+    public function update(Post $id){
+        return view('Admin.posts.new', [
+            'post' => $id,
+        ]);
     }
     public function delete($id){
-
+        $post = Post::find($id);
+        if (!$post) {
+            abort(404);
+        } else {
+            $post->delete();
+            return redirect()->back();
+        }
     }
 }

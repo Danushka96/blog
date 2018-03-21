@@ -38,6 +38,8 @@ Route::group(['middleware' => ['auth'], 'as' => 'admin.'], function(){
     Route::get('/admin/posts','Admin\PostController@index');
     Route::get('/admin/posts/new','Admin\PostController@new');
     Route::get('/admin/posts/{id}', 'Admin\PostController@view');
+    Route::get('/admin/posts/edit/{id}', 'Admin\PostController@update');
+    Route::get('/admin/posts/delete/{id}', 'Admin\PostController@delete');
     Route::post('/admin/posts/save','Admin\PostController@store');
 
 });

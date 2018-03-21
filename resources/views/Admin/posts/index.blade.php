@@ -30,8 +30,8 @@
                             <td align="right">
                                 <div>
                                     <a href="/admin/posts/{{$post['id']}}"><button class="btn btn-xs btn-primary">View</button></a>
-                                    <a href="/admin/user/view/"><button class="btn btn-xs btn-success">Edit</button></a>
-                                    <a href="/admin/user/drop/" onclick="return confirmdelete()"><button class="btn btn-xs btn-danger">Delete</button></a>
+                                    <a href="/admin/posts/edit/{{$post['id']}}"><button class="btn btn-xs btn-success">Edit</button></a>
+                                    <a href="/admin/posts/delete/{{$post['id']}}" onclick="return confirmdelete()"><button class="btn btn-xs btn-danger">Delete</button></a>
                                 </div>
                                 <script>
                                     function confirmdelete() {

@@ -1,6 +1,5 @@
-@extends('Admin.layouts.app')
-@section('content')
-            <div class="content">
+<template>
+	<div class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -389,25 +388,4 @@
                 </div>
             </div>
 
-@endsection
-
-@push('scripts')
-    <!--  Charts Plugin -->
-    {{-- <script src="{{asset('js/chartist.min.js')}}"></script> --}}
-    {{-- <script src="{{asset('js/bootstrap-notify.js')}}"></script> --}}
-    <!--  Google Maps Plugin    -->
-    {{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
-    <!-- Material Dashboard javascript methods -->
-    {{-- <script src="{{asset('js/material-dashboard.js?v=1.2.0')}}"></script> --}}
-    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-    {{-- <script src="{{asset('js/demo.js')}}"></script> --}}
-    
-    {{-- <script type="text/javascript"> --}}
-        {{-- $(document).ready(function() { --}}
-
-            {{-- // Javascript method's body can be found in assets/js/demos.js --}}
-            {{-- demo.initDashboardPageCharts(); --}}
-
-        {{-- }); --}}
-    </script>
-@endpush
+</template>

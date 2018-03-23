@@ -2,35 +2,41 @@
 
 <body>
     <div class="wrapper">
-
-         @include('Admin.layouts.sidebar')
-
+        <div id="app">
+        {{-- @include('Admin.layouts.sidebar') --}}
+        <side-bar></side-bar>
         <div class="main-panel">
-            @include('Admin.layouts.navbar') 
+            <nav-bar></nav-bar>
 
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
 
-                            @yield('content')
+                            {{-- @yield('content') --}}
+                            <router-view></router-view>
                     </div>
                 </div>
             </div>
 
             @include('Admin.layouts.footer')
         </div>
-    </div>
+    </div> 
+        </div>
 
-    <script src="{{asset('assets/js/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('assets/js/material.min.js')}}" type="text/javascript"></script>
+    {{-- <script src="js/jquery-3.2.1.min.js" ></script> --}}
+    {{-- <script src="js/bootstrap.min.js"></script> --}}
+    {{-- <script src="js/material.min.js"></script> --}}
 
     <!--  Dynamic Elements plugin -->
-    <script src="{{asset('assets/js/arrive.min.js')}}"></script>
+    {{-- <script src="js/arrive.min.js"></script> --}}  
     <!--  PerfectScrollbar Library -->
-    <script src="{{asset('assets/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    {{-- <script src="js/perfect-scrollbar.jquery.min.js"></script> --}}
+
+    <script src="js/manifest.js"></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/app.js"></script>
     <!--  Notifications Plugin    -->
 
-    @stack('scripts')
+    {{-- @stack('scripts') --}}
 </body>
 </html>

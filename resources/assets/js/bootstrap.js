@@ -1,7 +1,9 @@
 window.Vue = require('vue')
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(VueResource);
 
 try {
     window.$ = window.jQuery = require('jquery');

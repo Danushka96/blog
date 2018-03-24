@@ -17,7 +17,7 @@ class ModifyUser extends Migration
             $table->integer('role');
             $table->String('fname');
             $table->String('lname');
-            $table->String('about');
+            $table->String('about')->nullable();
             $table->String('pp');
 //            $table->dateTime('last_login');
         });

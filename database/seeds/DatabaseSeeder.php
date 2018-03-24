@@ -11,14 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'name' => 'Administrator'
+        DB::table('role')->insert([
+            'role' => 'Administrator'
         ]);
-        DB::table('roles')->insert([
-            'name' => 'Author'
+        DB::table('role')->insert([
+            'role' => 'Author'
         ]);
-        DB::table('roles')->insert([
-            'name' => 'Subscriber'
+        DB::table('role')->insert([
+            'role' => 'Subscriber'
         ]);
 
     }

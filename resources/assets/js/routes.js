@@ -11,7 +11,15 @@ let routes = [
 	},
 	{
 		path: '/users',
-		component: require('./views/UsersView.vue'),
+		component: require('./views/users/UsersView.vue'),
+	},
+	{
+		path: '/users/view/:id',
+		component: require('./views/users/UserProfile.vue'),
+	},
+	{
+		path: '/users/new',
+		component: require('./views/users/NewUser.vue'),
 	},
 	{
 		path: '/settings',

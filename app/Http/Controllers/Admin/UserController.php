@@ -13,17 +13,22 @@ use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
     public function index(){
-        $user=User::all();
-        $role=role::all();
-        return view('Admin/users/index',compact('user','role'));
+        $users = DB::table('users')->join('role', 'users.role', '=', 'role_id')->get();
+        return $users;
     }
     public function new(){
         return view('Admin/users/new');
     }
     public function store(Request $request){
-//        $request->user()->fill([
-//            'password' => Hash::make($request->password)
-//        ])->save();
+
+        $this->validate($request, [
+            'name' => 'required',
+            'password' => 'required',
+            'email' => 'required|email',
+            'fname' => 'required',
+            'lname' => 'required',
+        ]);
+
         $usernew = new User();
         $usernew -> name= $request->name;
         $usernew -> password= Hash::make($request->input('password'));
@@ -32,16 +37,21 @@ class UserController extends Controller
         $usernew -> fname=$request->fname;
         $usernew -> lname=$request->lname;
         $usernew -> save();
-//        $user=User::create($request->all());
-        $user=User::all();
-        $role=role::all();
-        return view('Admin/users/index',compact('user','role'));
+        return $usernew;
     }
     public function view($userid){
         $current=User::findorFail($userid);
+        return $current;
         return view('Admin/users/view',compact('current'));
     }
     public function update(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'fname' => 'required',
+            'lname' => 'required',
+        ]);
+
         $user=User::findorFail($request->id);
 //        $current=$user;
         $user->update($request->all());
@@ -50,14 +60,13 @@ class UserController extends Controller
         $current->save();
 //        DB::table('users')->update(['about'=>($request->about)])->where('id','1');
 //        echo $request;
-        return view('Admin/users/view',compact('current'));
+        return $current;
     }
 
     public function drop($id){
         $current=User::findorFail($id);
         $current->delete();
-        $user=User::all();
-        $role=role::all();
-        return view('Admin/users/index',compact('user','role'));
+        $users = DB::table('users')->join('role', 'users.role', '=', 'role_id')->get();
+        return $users;
     }
 }

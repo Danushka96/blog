@@ -10,8 +10,8 @@
                     </a>
                     <div class="card">
                         <div class="card-header" data-background-color="purple">
-                            <h4 class="title">User List</h4>
-                            <p class="category">Manage User Accounts</p>
+                            <h4 class="title">Settings</h4>
+                            <p class="category">Manage User Accounts Settings</p>
                         </div>
                         <div class="card-content table-responsive">
                             <table class="table">

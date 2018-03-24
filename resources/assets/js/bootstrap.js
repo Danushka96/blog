@@ -5,11 +5,11 @@ import VueResource from 'vue-resource'
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-try {
-    window.$ = window.jQuery = require('jquery');
+// try {
+//     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
-} catch (e) {}
+//     require('bootstrap-sass');
+// } catch (e) {}
 
 window.axios = require('axios');
 

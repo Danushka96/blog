@@ -5,20 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index(){
-
-        $users=array();
-        $all_user=User::all();
-        foreach ($all_user as $user){
-            $users[$user['id']]=$user['fname'];
-        }
-        $posts=Post::all();
-        return view('Admin/posts/index',compact('posts','users'));
+        $posts = DB::table('posts')->join('users', 'posts.userid', '=', 'users.user_id')->get();
+        return $posts;
     }
 
     public function new(){
@@ -27,6 +22,12 @@ class PostController extends Controller
 
     public function store(Request $request){
         {
+            // return (Post::find($request->post_id)) ? Post::find($request->post_id) : new Post();
+            $this->validate($request, [
+                'title' => 'required',
+                'body'=> 'required'
+            ]);
+
             $detail=$request->body;
 
             $dom = new \domdocument();
@@ -51,18 +52,19 @@ class PostController extends Controller
             }
 
             $detail = $dom->savehtml();
-            $summernote = new Post();
+            $summernote = (Post::find($request->post_id)) ? Post::find($request->post_id) : new Post();
             $summernote->body = $detail;
             $summernote->title = $request->title;
-            $summernote->userid = Auth::user()->id;
+            $summernote->userid = Auth::user()->user_id;
             $summernote->save();
-            return view('Admin/posts/view',compact('summernote'));
+            // $summernote->post_id = $request->post_id
+            return $summernote;
         }
     }
 
     public function view($id){
         $post = Post::find($id);
-        return view('Admin.posts.post', compact('post'));
+        return $post;
     }
     public function edit($id){
 
@@ -79,7 +81,7 @@ class PostController extends Controller
             abort(404);
         } else {
             $post->delete();
-            return redirect()->back();
+            return DB::table('posts')->join('users', 'posts.userid', '=', 'users.user_id')->get();
         }
     }
 }

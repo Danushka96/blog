@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
     public function index(){
-        $users = DB::table('users')->join('role', 'users.role', '=', 'role_id')->get();
+        $users = DB::table('users')->join('roles', 'users.role', '=', 'role_id')->get();
         return $users;
     }
     public function new(){
@@ -66,7 +66,7 @@ class UserController extends Controller
     public function drop($id){
         $current=User::findorFail($id);
         $current->delete();
-        $users = DB::table('users')->join('role', 'users.role', '=', 'role_id')->get();
+        $users = DB::table('users')->join('roles', 'users.role', '=', 'role_id')->get();
         return $users;
     }
 }

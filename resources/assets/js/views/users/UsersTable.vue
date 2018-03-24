@@ -13,7 +13,7 @@
                 <td>5</td>
                 <td align="right">
                     <div>
-                    	<router-link class="btn btn-xs btn-primary" :to="'/users/view/' + user.id">View</router-link>
+                    	<router-link class="btn btn-xs btn-primary" :to="'/users/view/' + user.user_id">View</router-link>
                         <a href="#" @click="deleteUser(user.id)"><button class="btn btn-xs btn-danger">Delete</button></a>
                     </div>
                 </td>

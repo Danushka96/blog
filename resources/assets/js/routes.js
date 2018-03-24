@@ -7,7 +7,19 @@ let routes = [
 	},
 	{
 		path: '/posts',
-		component: require('./views/PostsView.vue'),
+		component: require('./views/posts/PostsView.vue'),
+	},
+	{
+		path: '/posts/new',
+		component: require('./views/posts/TextEditor.vue')
+	},
+	{
+		path: '/posts/:id',
+		component: require('./views/posts/ReadPost.vue')
+	},
+	{
+		path: '/posts/edit/:id',
+		component: require('./views/posts/TextEditor.vue')
 	},
 	{
 		path: '/users',

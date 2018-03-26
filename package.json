@@ -34,6 +34,7 @@
         "popper.js": "^1.14.1",
         "rebuild": "^0.1.2",
         "summernote": "^0.8.10",
+        "vue-chartist": "^2.1.2",
         "vue-resource": "^1.5.0",
         "vue-router": "^3.0.1"
     }

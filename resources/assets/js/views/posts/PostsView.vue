@@ -51,7 +51,7 @@
                     console.log(this.posts)
                 })
                 .catch((err) => {
-                    console.log(err)
+                    console.log(err.message)
                 })
         },
         methods: {

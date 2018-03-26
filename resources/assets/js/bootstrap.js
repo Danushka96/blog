@@ -4,6 +4,7 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+Vue.use(require('vue-chartist'));
 
 // try {
 //     window.$ = window.jQuery = require('jquery');

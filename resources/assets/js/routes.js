@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 let routes = [
 	{
 		path: '/',
-		component: require('./views/DashboardView.vue'),
+		component: require('./views/dashboard/DashboardView.vue'),
 	},
 	{
 		path: '/posts',
